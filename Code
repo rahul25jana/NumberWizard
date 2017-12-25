@@ -1,0 +1,82 @@
+using UnityEngine;
+using System.Collections;
+
+
+public class NumWizz : MonoBehaviour
+ {
+	int maxy ;
+	int miny  ;
+	int guessy ;
+	
+	// Use this for initialization
+	void Start () 
+	{
+		StartGam();
+	}
+	
+	void StartGam ()
+	
+	{
+		 maxy = 500;
+		 miny = 0;
+		 guessy = 250;
+		 
+		maxy = maxy + 1;
+		// used to find edges or when computer rounds off
+		
+		print ("<color= yellow><b> New Game </b></color>");
+		print ("<color=red><size=20><i>Welcome to NumWiz</i></size></color>, <b>my first game</b>" ); 
+		print ("<color=blue><i>think a number, but <b>don't</b> tell</i></color>");
+		
+		
+		print ("the highest number u can pick is "   + maxy);
+		print ("the lowest numb u can pick is   " + miny);
+		
+		print ("is the numb high or low than? " + guessy);
+		print ("up for higher, down for lower and return for equals");
+		
+	}
+	
+	void NextGuessy ()
+	
+	{
+		if(Input.GetKeyDown("up"))
+		{
+			//		  	print ("up was pressed");
+			miny = guessy;
+			guessy = (maxy + miny)/2;
+			print ( "higher or lower than " + guessy); 
+			
+		}
+		
+		//		
+		else if(Input.GetKeyDown(KeyCode.DownArrow))
+		{
+			
+			maxy = guessy;
+			guessy = (maxy + miny)/2;
+			print ("higher or lower than " + guessy);  
+			//			print ("down was pressed");
+			
+		}
+		
+		if(Input.GetKeyDown("return"))
+		{
+			print ("i won");
+			
+			StartGam();
+			
+		}
+		
+	}
+	
+		// Update is called once per frame
+	void Update () 	
+	{
+
+		NextGuessy();
+		
+	}
+	
+
+}
