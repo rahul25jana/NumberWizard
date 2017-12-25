@@ -29,11 +29,11 @@ public class NumWizz : MonoBehaviour
 		print ("<color=blue><i>think a number, but <b>don't</b> tell</i></color>");
 		
 		
-		print ("the highest number u can pick is "   + maxy);
-		print ("the lowest numb u can pick is   " + miny);
+		print ("<size=15>the highest number u can pick is </size>"   + maxy);
+		print ("<size=15>the lowest numb u can pick is </size>   " + miny);
 		
-		print ("is the numb high or low than? " + guessy);
-		print ("up for higher, down for lower and return for equals");
+		print ("<b>is the numb high or low than?</b> " + guessy);
+		print ("<b> up for higher, down for lower and return for equals</b>");
 		
 	}
 	
@@ -45,7 +45,7 @@ public class NumWizz : MonoBehaviour
 			//		  	print ("up was pressed");
 			miny = guessy;
 			guessy = (maxy + miny)/2;
-			print ( "higher or lower than " + guessy); 
+			print ( "<color=green>higher or lower than </color> " + guessy); 
 			
 		}
 		
@@ -55,14 +55,14 @@ public class NumWizz : MonoBehaviour
 			
 			maxy = guessy;
 			guessy = (maxy + miny)/2;
-			print ("higher or lower than " + guessy);  
+			print ("<color=navy> higher or lower than </color> " + guessy);  
 			//			print ("down was pressed");
 			
 		}
 		
 		if(Input.GetKeyDown("return"))
 		{
-			print ("i won");
+			print ("<color=black><size=25> i won </size></color>");
 			
 			StartGam();
 			
